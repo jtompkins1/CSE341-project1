@@ -1,0 +1,20 @@
+@baseUrl = http://localhost:3000
+
+@contacts = http://localhost:3000/contacts
+
+@contactID = http://localhost:3000/contacts/6962df84f9afea9f510821ca
+
+#test for local deployment
+GET {{baseUrl}}
+
+GET {{contacts}}
+
+GET {{contactID}}
+
+
+#test for render deployment
+
+GET https://cse341-project1-a1jm.onrender.com/
+GET https://cse341-project1-a1jm.onrender.com/contacts
+GET https://cse341-project1-a1jm.onrender.com/contacts/6962df84f9afea9f510821ca
+
