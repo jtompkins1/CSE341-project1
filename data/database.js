@@ -1,35 +1,35 @@
-//routes/contacts.js
+//data/database.js
 
 const dotenv = require('dotenv');
 dotenv.config();
 
 const MongoClient = require('mongodb').MongoClient;
 
-let contacts;
+let database;
 
 const initDb = (callback) => {
-    if (contacts) {
-        console.log('Contacts database is already initialized!');
+    if (database) {
+        console.log('Database is already initialized!');
         return callback(null);
     }
     MongoClient.connect(process.env.MONGODB_URL)
         .then((client) => {
-            contacts = client;
-            callback(null, contacts);
+            database = client;
+            callback(null, database);
         })
         .catch((err) => {
             callback(err);
         });
 };
 
-const getContacts = () => {
-    if (!contacts) {
-        throw new Error('Contacts database not initialized')
+const getDatabase = () => {
+    if (!database) {
+        throw new Error('Database not initialized')
     }
-        return contacts;
+        return database;
 };
 
 module.exports = {
     initDb,
-    getContacts
+    getDatabase
 };
