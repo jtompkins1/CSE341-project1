@@ -18,9 +18,9 @@ POST {{contacts}} HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "New",
+    "firstName": "Validate3",
     "lastName": "Contact",
-    "email": "test@example.com",
+    "email": "testexample.com",
     "favoriteColor": "orange",
     "birthday": "July 4, 1999"
 }
